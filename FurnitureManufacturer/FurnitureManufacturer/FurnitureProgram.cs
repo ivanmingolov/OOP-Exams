@@ -6,7 +6,9 @@
     {
         public static void Main()
         {
-            FurnitureManufacturerEngine.Instance.Start();
+            var engine = FurnitureManufacturerEngine.Instance;
+
+            engine.Start();
         }
     }
 }

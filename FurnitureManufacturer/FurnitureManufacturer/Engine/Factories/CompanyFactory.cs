@@ -8,7 +8,9 @@
     {
         public ICompany CreateCompany(string name, string registrationNumber)
         {
-            // TODO: Implement this method
+            var company = new Company(name, registrationNumber);
+
+            return company;
         }
     }
 }

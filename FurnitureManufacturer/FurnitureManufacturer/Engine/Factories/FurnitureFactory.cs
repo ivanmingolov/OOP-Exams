@@ -1,10 +1,10 @@
 ﻿namespace FurnitureManufacturer.Engine.Factories
 {
-    using System;
-
     using Interfaces;
     using Interfaces.Engine;
     using Models;
+    using Models.Furnitures;
+    using System;
 
     public class FurnitureFactory : IFurnitureFactory
     {
@@ -15,25 +15,41 @@
 
         public ITable CreateTable(string model, string materialType, decimal price, decimal height, decimal length, decimal width)
         {
-            // TODO: Implement this method
+            var material = GetMaterialType(materialType);
+
+            var table = new Table(model, material, price, height, length, width);
+
+            return table;
         }
 
         public IChair CreateChair(string model, string materialType, decimal price, decimal height, int numberOfLegs)
         {
-            // TODO: Implement this method
+            var material = GetMaterialType(materialType);
+
+            var chair = new Chair(model, material, price, height, numberOfLegs);
+
+            return chair;
         }
 
         public IAdjustableChair CreateAdjustableChair(string model, string materialType, decimal price, decimal height, int numberOfLegs)
         {
-            // TODO: Implement this method
+            var material = GetMaterialType(materialType);
+
+            var adjustableChair = new AdjustableChair(model, material, price, height, numberOfLegs);
+
+            return adjustableChair;
         }
 
         public IConvertibleChair CreateConvertibleChair(string model, string materialType, decimal price, decimal height, int numberOfLegs)
         {
-            // TODO: Implement this method
+            var material = GetMaterialType(materialType);
+
+            var convertibleChair = new ConvertibleChair(model, material, price, height, numberOfLegs);
+
+            return convertibleChair;
         }
 
-        private MaterialType GetMaterialType(string material)
+        private static MaterialType GetMaterialType(string material)
         {
             switch (material)
             {
