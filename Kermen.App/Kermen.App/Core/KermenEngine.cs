@@ -60,7 +60,8 @@
                 }
 
                 count++;
-            } while (this.IsRunning);
+            }
+            while (this.IsRunning);
         }
     }
 }

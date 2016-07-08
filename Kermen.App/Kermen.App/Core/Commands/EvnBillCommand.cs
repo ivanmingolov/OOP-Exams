@@ -1,10 +1,10 @@
 ﻿namespace Kermen.App.Core.Commands
 {
     using Interfaces;
-    using Models.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Models.Interfaces;
     using Utilities;
 
     public class EvnBillCommand : Command

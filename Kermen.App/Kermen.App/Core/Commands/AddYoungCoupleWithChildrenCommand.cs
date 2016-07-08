@@ -70,6 +70,7 @@
                         toys.Add(toy);
                     }
                 }
+
                 childrenInfo = childrenInfo.Skip(childPropertiesCount).ToArray();
                 var child = new Child(foods, toys);
 

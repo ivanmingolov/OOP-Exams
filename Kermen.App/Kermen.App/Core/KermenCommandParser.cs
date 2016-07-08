@@ -40,7 +40,6 @@
             {
                 var name = $"Add{line.Substring(0, line.IndexOf('('))}Command";
 
-
                 var childrenPropertiesCount = new List<int>();
                 var childrenMatches = Regex.Matches(line, "Child\\(.+?\\)");
                 foreach (Match match in childrenMatches)

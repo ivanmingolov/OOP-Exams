@@ -19,7 +19,10 @@
 
         private decimal Pension
         {
-            get { return this.pension; }
+            get
+            {
+                return this.pension;
+            }
 
             set
             {

@@ -19,48 +19,7 @@
             this.FamilyMembers = familyMembers;
             this.ElectricItems = electricItems;
             this.Wallet = new Wallet();
-
         }
-
-        private int NumberOfRooms
-        {
-            get
-            {
-                return this.numberOfRooms;
-            }
-
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(this.NumberOfRooms), $"{nameof(this.NumberOfRooms)} cannot be negative number.");
-                }
-
-                this.numberOfRooms = value;
-            }
-        }
-
-        private decimal RoomElectricityCost
-        {
-            get
-            {
-                return this.roomElectricityCost;
-            }
-
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(this.RoomElectricityCost), $"{nameof(this.RoomElectricityCost)} cannot be negative number.");
-                }
-
-                this.roomElectricityCost = value;
-            }
-        }
-
-        private ICollection<Person> FamilyMembers { get; }
-
-        private ICollection<ElectricItem> ElectricItems { get; }
 
         public decimal TotalIncomeMoney => this.FamilyMembers.Sum(familyMember => familyMember.IncomeMoney);
 
@@ -97,5 +56,45 @@
         public Wallet Wallet { get; }
 
         public int MembersCount => this.FamilyMembers.Count;
+
+        private ICollection<Person> FamilyMembers { get; }
+
+        private ICollection<ElectricItem> ElectricItems { get; }
+
+        private int NumberOfRooms
+        {
+            get
+            {
+                return this.numberOfRooms;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(this.NumberOfRooms), $"{nameof(this.NumberOfRooms)} cannot be negative number.");
+                }
+
+                this.numberOfRooms = value;
+            }
+        }
+
+        private decimal RoomElectricityCost
+        {
+            get
+            {
+                return this.roomElectricityCost;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(this.RoomElectricityCost), $"{nameof(this.RoomElectricityCost)} cannot be negative number.");
+                }
+
+                this.roomElectricityCost = value;
+            }
+        }
     }
 }
