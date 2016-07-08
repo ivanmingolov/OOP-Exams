@@ -3,11 +3,15 @@
     using ElectricItems;
     using Interfaces;
     using Persons;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
     public class Family : IFamily
     {
+        private int numberOfRooms;
+        private decimal roomElectricityCost;
+
         public Family(int numberOfRooms, decimal roomElectricityCost, ICollection<Person> familyMembers, ICollection<ElectricItem> electricItems = null)
         {
             this.NumberOfRooms = numberOfRooms;
@@ -18,9 +22,41 @@
 
         }
 
-        private int NumberOfRooms { get; }
+        private int NumberOfRooms
+        {
+            get
+            {
+                return this.numberOfRooms;
+            }
 
-        private decimal RoomElectricityCost { get; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(this.NumberOfRooms), $"{nameof(this.NumberOfRooms)} cannot be negative number.");
+                }
+
+                this.numberOfRooms = value;
+            }
+        }
+
+        private decimal RoomElectricityCost
+        {
+            get
+            {
+                return this.roomElectricityCost;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(this.RoomElectricityCost), $"{nameof(this.RoomElectricityCost)} cannot be negative number.");
+                }
+
+                this.roomElectricityCost = value;
+            }
+        }
 
         private ICollection<Person> FamilyMembers { get; }
 
@@ -48,12 +84,6 @@
                 var totalElectricityCost = 0m;
 
                 totalElectricityCost += this.NumberOfRooms * this.RoomElectricityCost;
-
-                // Add Laptop electricity cost if family have more than two parents
-                if (this.FamilyMembers.Count(familyMember => familyMember.GetType().Name == "Parent") > 1)
-                {
-                    totalElectricityCost += this.ElectricItems.First(item => item.GetType().Name == "Laptop").ElectricityCost;
-                }
 
                 if (this.ElectricItems != null)
                 {

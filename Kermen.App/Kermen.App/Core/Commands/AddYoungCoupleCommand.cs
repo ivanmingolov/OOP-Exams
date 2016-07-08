@@ -30,7 +30,7 @@
             var fridge = new Fridge(fridgeElectricityCost);
             var laptop = new Laptop(laptopElectricityCost);
 
-            var electricItems = new List<ElectricItem> { tv, fridge, laptop };
+            var electricItems = new List<ElectricItem> { tv, fridge, laptop, laptop };
 
             var family = new Family(KermenConstants.YoungCoupleNumberOfRooms, KermenConstants.YoungCoupleRoomElectricityCost, familyMembers, electricItems);
 
