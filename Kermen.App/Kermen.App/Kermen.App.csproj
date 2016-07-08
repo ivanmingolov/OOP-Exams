@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08F3168C-7C6C-440A-A9C8-59FEF057440D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kermen.App</RootNamespace>
+    <AssemblyName>Kermen.App</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Commands\AddAloneOldCommand.cs" />
+    <Compile Include="Core\Commands\AddAloneYoungCommand.cs" />
+    <Compile Include="Core\Commands\AddOldCoupleCommand.cs" />
+    <Compile Include="Core\Commands\AddYoungCoupleWithChildrenCommand.cs" />
+    <Compile Include="Core\Commands\DemocracyCommand.cs" />
+    <Compile Include="Core\Commands\EvnBillCommand.cs" />
+    <Compile Include="Core\Commands\EvnCommand.cs" />
+    <Compile Include="Core\Commands\PayCommand.cs" />
+    <Compile Include="Core\KermenCommandDispatcher.cs" />
+    <Compile Include="Core\Utilities\CommandArgs.cs" />
+    <Compile Include="Core\KermenCommandParser.cs" />
+    <Compile Include="Core\Commands\AddYoungCoupleCommand.cs" />
+    <Compile Include="Core\Commands\Command.cs" />
+    <Compile Include="Core\IO\ConsoleUserInterface.cs" />
+    <Compile Include="Core\KermenDatabase.cs" />
+    <Compile Include="Core\KermenEngine.cs" />
+    <Compile Include="Core\Utilities\KermenConstants.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\ICommandDispatcher.cs" />
+    <Compile Include="Interfaces\ICommandParser.cs" />
+    <Compile Include="Interfaces\IDatabase.cs" />
+    <Compile Include="Interfaces\IEngine.cs" />
+    <Compile Include="Interfaces\IO\IReader.cs" />
+    <Compile Include="Interfaces\IO\IUserInterface.cs" />
+    <Compile Include="Interfaces\IO\IWriter.cs" />
+    <Compile Include="Models\ElectricItems\ElectricItem.cs" />
+    <Compile Include="Models\ElectricItems\Fridge.cs" />
+    <Compile Include="Models\ElectricItems\Laptop.cs" />
+    <Compile Include="Models\ElectricItems\Stove.cs" />
+    <Compile Include="Models\ElectricItems\Tv.cs" />
+    <Compile Include="Models\Family.cs" />
+    <Compile Include="Models\Interfaces\IFamily.cs" />
+    <Compile Include="Models\Interfaces\IPerson.cs" />
+    <Compile Include="Models\Items\Food.cs" />
+    <Compile Include="Models\Items\Item.cs" />
+    <Compile Include="Models\Items\Toy.cs" />
+    <Compile Include="Models\Persons\Child.cs" />
+    <Compile Include="Models\Persons\GrandParent.cs" />
+    <Compile Include="Models\Persons\Parent.cs" />
+    <Compile Include="Models\Persons\Person.cs" />
+    <Compile Include="Models\Wallet.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

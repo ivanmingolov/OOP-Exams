@@ -1,10 +1,12 @@
 ﻿namespace FurnitureManufacturer.Interfaces
 {
+    using Models;
+
     public interface IFurniture
     {
         string Model { get; }
 
-        string Material { get; }
+        MaterialType Material { get; }
 
         decimal Price { get; set; }
 
